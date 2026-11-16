@@ -10,9 +10,14 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@hookform/error-message": "^2.0.1",
+    "@tailwindcss/vite": "^4.3.5",
     "lucide-react": "^1.73.0",
     "react": "^19.2.8",
-    "react-dom": "^19.2.8"
+    "react-dom": "^19.2.8",
+    "react-hook-form": "^7.92.0",
+    "tailwindcss": "^4.3.5",
+    "use-mask-input": "^3.14.4"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",

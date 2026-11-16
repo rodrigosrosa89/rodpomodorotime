@@ -5,42 +5,60 @@ import { Logo } from "./components/Logo";
 import { Menu } from "./components/Menu";
 import "./styles/global.css";
 import "./styles/theme.css";
+import React from "react";
+import { FormCadastro } from "./Cadastro/components/FormCadastro.component";
+import { FormHeaderCadastro } from "./Cadastro/components/FormHeaderCadastro.component";
 
 export function App() {
-  return (
-    <>
-      <Container>
-        <Logo />
-      </Container>
+  const cadastroOk = false;
 
-      <Container>
-        <Menu />
-      </Container>
+  if (!cadastroOk) {
+    return (
+      <React.Fragment>
+        <div className="form">
+          <FormHeaderCadastro />
+          <FormCadastro />
+        </div>
+      </React.Fragment>
+    );
+  }
 
-      <Container>
-        <CountDown />
-      </Container>
+  if (cadastroOk) {
+    return (
+      <>
+        <Container>
+          <Logo />
+        </Container>
 
-      <Container>
-        <form className="form">
-          <div className="formRow">
-            <Input id="meuInput" type="text" />
-          </div>
+        <Container>
+          <Menu />
+        </Container>
 
-          <div className="formRow">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-          </div>
+        <Container>
+          <CountDown />
+        </Container>
 
-          <div className="formRow">
-            <p>Ciclos.</p>
-            <p>0 0 0 0 0 </p>
-          </div>
+        <Container>
+          <form className="form">
+            <div className="formRow">
+              <Input id="meuInput" type="text" />
+            </div>
 
-          <div className="formRow">
-            <button>Enviar</button>
-          </div>
-        </form>
-      </Container>
-    </>
-  );
+            <div className="formRow">
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            </div>
+
+            <div className="formRow">
+              <p>Ciclos.</p>
+              <p>0 0 0 0 0 </p>
+            </div>
+
+            <div className="formRow">
+              <button>Enviar</button>
+            </div>
+          </form>
+        </Container>
+      </>
+    );
+  }
 }
