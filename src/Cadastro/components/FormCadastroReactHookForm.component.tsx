@@ -6,7 +6,7 @@ import { useHookFormMask } from "use-mask-input";
 import { Input } from "../../components/Input";
 import styles from "./styles.module.css";
 
-export function FormCadastro(): React.ReactElement {
+export function FormCadastroReactHookForm(): React.ReactElement {
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
 
   const {

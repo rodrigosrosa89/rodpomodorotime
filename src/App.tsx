@@ -6,7 +6,7 @@ import { Menu } from "./components/Menu";
 import "./styles/global.css";
 import "./styles/theme.css";
 import React from "react";
-import { FormCadastro } from "./Cadastro/components/FormCadastro.component";
+import { FormCadastroReactHookForm } from "./Cadastro/components/FormCadastroReactHookForm.component";
 import { FormHeaderCadastro } from "./Cadastro/components/FormHeaderCadastro.component";
 
 export function App() {
@@ -17,7 +17,7 @@ export function App() {
       <React.Fragment>
         <div className="form">
           <FormHeaderCadastro />
-          <FormCadastro />
+          <FormCadastroReactHookForm />
         </div>
       </React.Fragment>
     );
