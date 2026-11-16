@@ -2,7 +2,7 @@ import { ErrorMessage } from "@hookform/error-message";
 import { EyeIcon, EyeOffIcon, Loader } from "lucide-react";
 import { useState } from "react";
 import { useForm, type FieldValues } from "react-hook-form";
-import { useHookFormMask } from "use-mask-input";
+import { useHookFormMask, type UseFormRegister } from "use-mask-input";
 import { Input } from "../../components/Input";
 import styles from "./styles.module.css";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -22,9 +22,13 @@ export function FormCadastro(): React.ReactElement {
     setError,
     reset,
     formState: { isSubmitting, errors },
-  } = useForm({ resolver: zodResolver(cadastroRegisterSchema) });
+  } = useForm<CadastroRegister>({
+    resolver: zodResolver(cadastroRegisterSchema),
+  });
 
-  const registerWithMask = useHookFormMask(register);
+  const registerWithMask = useHookFormMask(
+    register as UseFormRegister<FieldValues>,
+  );
 
   async function handleCepBlur(event: React.FocusEvent<HTMLInputElement>) {
     const cep = event.target.value;
